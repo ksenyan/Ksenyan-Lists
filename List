@@ -1,0 +1,22 @@
+animallist = ['science', 'math', 'english', 'socials']
+print ("Welcome to subjects! You can input new ones, but if it already exists on the list, it'll be deleted.")
+print ("Inputing a space or nothing will remove the last item on the list.")
+print ("Be careful not to empty the list - the program will end if so! You can also type 'quit' to force stop the program.")
+print ("Inputing 'print' will print the list without changing anything.")
+while animallist != []:
+  x = input()
+  if x == 'print':
+    print (animallist, sep=', ')
+  elif x in animallist:
+    animallist.remove(x)
+    print(animallist, sep=', ')
+  elif x == 'quit':
+    animallist = []
+  elif x =='' or x == ' ':
+    animallist.pop(-1)
+  elif x not in animallist:
+    animallist.append(x)
+    print(animallist, sep=', ')
+ 
+
+print("Program stopped") 
