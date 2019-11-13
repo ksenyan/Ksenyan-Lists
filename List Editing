@@ -3,20 +3,25 @@ print ("Welcome to subjects! You can input new ones, but if it already exists on
 print ("Inputing a space or nothing will remove the last item on the list.")
 print ("Be careful not to empty the list - the program will end if so! You can also type 'quit' to force stop the program.")
 print ("Inputing 'print' will print the list without changing anything.")
-while animallist != []:
+
+while animallist != []:                    #Until your list is empty
   x = input()
   if x == 'print':
-    print (animallist, sep=', ')
-  elif x in animallist:
+    print (animallist, sep=', ') #reads out the list, taking away quotations
+    
+  elif x in animallist:                    #elifs so only one thing happens each loop
     animallist.remove(x)
     print(animallist, sep=', ')
+    
   elif x == 'quit':
-    animallist = []
+    animallist = []                       #don't print list because it's empty
+    
   elif x =='' or x == ' ':
     animallist.pop(-1)
+    
   elif x not in animallist:
     animallist.append(x)
     print(animallist, sep=', ')
  
 
-print("Program stopped") 
+print("Program stopped")                #It can only get ut of the loop if it's empty
