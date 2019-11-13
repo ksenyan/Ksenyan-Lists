@@ -6,6 +6,8 @@ print ("Inputing 'print' will print the list without changing anything.")
 
 while animallist != []:                    #Until your list is empty
   x = input()
+  if len(animallist) >= 10 :                #If it gets too long the program tells you!
+    print ("Wow, your list is long.")
   if x == 'print':
     print (animallist, sep=', ') #reads out the list, taking away quotations
     
