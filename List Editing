@@ -1,29 +1,41 @@
-animallist = ['science', 'math', 'english', 'socials']
+llist = ['science', 'math', 'english', 'socials']
+
 print ("Welcome to subjects! You can input new ones, but if it already exists on the list, it'll be deleted.")
 print ("Inputing a space or nothing will remove the last item on the list.")
 print ("Be careful not to empty the list - the program will end if so! You can also type 'quit' to force stop the program.")
 print ("Inputing 'print' will print the list without changing anything.")
 
-while animallist != []:                    #Until your list is empty
+while llist != []:                    #Until your list is empty
   x = input()
-  if len(animallist) >= 10 :                #If it gets too long the program tells you!
-    print ("Wow, your list is long.")
-  if x == 'print':
-    print (animallist, sep=', ') #reads out the list, taking away quotations
+  
+  if len(llist) >= 120 :
+    print ("Wow, your list is REALLY long!")
     
-  elif x in animallist:                    #elifs so only one thing happens each loop
-    animallist.remove(x)
-    print(animallist, sep=', ')
+  elif len(llist) >= 10 :                #If it gets too long the program tells you!
+    print ("Wow, your list is long.")
+
+ 
+  if x == 'print':
+    print (llist, sep=', ')           #reads out the list, taking away quotations
+    
+  elif x in llist:                    #elifs so only one thing happens each loop
+  
+    y = input("This item is already in the list. Would you like to remove it? (y or n) ")
+    if y == 'y':
+      llist.remove(x)
+    elif y !='n':
+      print("Invalid input")
+    print(llist, sep=', ')
     
   elif x == 'quit':
-    animallist = []                       #don't print list because it's empty
+    llist = []                       #don't print list because it's empty
     
-  elif x =='' or x == ' ':
-    animallist.pop(-1)
+  elif x =='' or x == ' ':              #if you enter nothing, it removes the last item by using pop
+    llist.pop(-1)
     
-  elif x not in animallist:
-    animallist.append(x)
-    print(animallist, sep=', ')
+  elif x not in llist:
+    llist.append(x)
+    print(llist, sep=', ')
  
 
 print("Program stopped")                #It can only get ut of the loop if it's empty
