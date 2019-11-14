@@ -3,6 +3,7 @@ gradesum = 0
 gradecount = int(input("How many grades are you adding? "))
 gradecount1 = gradecount        #We have two copies so one can stay the same until the end and the other counts down.
 averagegrade = 0
+
 while gradecount > 0 :          #So people can enter a grade of '0'.
     grade = float(input('Enter grade or -1 to quit. '))
     if grade == -1 :
@@ -14,8 +15,8 @@ while gradecount > 0 :          #So people can enter a grade of '0'.
             gradecount -= 1     #counts down each time ^^
 
         else :
-            print ('Invalid grade')
+            print ('Your grade is above 100.')
     averagegrade = gradesum/gradecount1   
     
-print (gradelist, sep=', ')  #Sep so there aren't ugly quotations, just commas.
-print (averagegrade)   
+print ('Here are all the grades you entered: ' + gradelist, sep=', ')  #Sep so there aren't ugly quotations, just commas.
+print ('This is the average grade: ' + averagegrade)   
